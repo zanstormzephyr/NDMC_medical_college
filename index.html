@@ -1,0 +1,381 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#102d50">
+<title>NDMC Medical College | Website Proposal</title>
+<meta name="description" content="An independent website concept for NDMC Medical College, Delhi.">
+<style>
+:root {
+  --navy: #102d50;
+  --blue: #176b87;
+  --teal: #22b8a7;
+  --light: #f2f7fa;
+  --text: #243449;
+  --muted: #63758a;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 85px; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: #fff;
+  line-height: 1.65;
+}
+a { color: inherit; }
+.notice-bar {
+  background: #fff3d8;
+  color: #684c12;
+  text-align: center;
+  padding: 9px 15px;
+  font-size: 12px;
+  font-weight: 700;
+}
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255,255,255,.97);
+  border-bottom: 1px solid #e6edf3;
+}
+.nav {
+  max-width: 1180px;
+  margin: auto;
+  padding: 14px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  min-width: 0;
+}
+.logo {
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  background: var(--navy);
+  color: white;
+  font-size: 23px;
+  font-weight: bold;
+}
+.brand strong { display: block; color: var(--navy); font-size: 15px; }
+.brand small { display: block; color: var(--muted); font-size: 11px; }
+nav { display: flex; align-items: center; flex-wrap: wrap; gap: 19px; }
+nav a {
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  color: #42566d;
+}
+nav a:hover { color: var(--teal); }
+.hero {
+  color: white;
+  background:
+    radial-gradient(ellipse at 85% 15%, rgba(34,184,167,.25), transparent 35%),
+    linear-gradient(125deg, #102d50, #174f70 75%, #176b87);
+  padding: 85px 22px 90px;
+  overflow: hidden;
+}
+.hero-inner { max-width: 1120px; margin: auto; }
+.eyebrow {
+  display: inline-block;
+  border: 1px solid rgba(255,255,255,.35);
+  border-radius: 30px;
+  padding: 7px 13px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.hero h1 {
+  max-width: 760px;
+  font-size: clamp(34px, 6vw, 62px);
+  line-height: 1.1;
+  margin: 24px 0 18px;
+  letter-spacing: -1.6px;
+}
+.hero h1 span { color: #66e1cf; }
+.hero p { max-width: 630px; color: #e0ebf3; font-size: 16px; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 29px; }
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 12px 19px;
+  font-size: 13px;
+  font-weight: 700;
+}
+.btn-primary { background: #48d2bd; color: #102d50; }
+.btn-outline { border: 1px solid #afc6d9; color: white; }
+.section { padding: 68px 22px; }
+.section.alt { background: var(--light); }
+.container { max-width: 1120px; margin: auto; }
+.kicker {
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+h2 { color: var(--navy); font-size: clamp(26px, 4vw, 37px); line-height: 1.2; margin: 9px 0 14px; }
+.intro { max-width: 690px; color: var(--muted); margin-bottom: 30px; }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.card {
+  padding: 25px;
+  border: 1px solid #e1eaf0;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 5px 20px rgba(16,45,80,.035);
+}
+.card .icon { font-size: 27px; }
+.card h3 { color: var(--navy); font-size: 17px; margin: 13px 0 7px; }
+.card p { font-size: 13px; color: var(--muted); margin: 0; }
+.card a { display: inline-block; margin-top: 14px; font-size: 12px; color: var(--blue); font-weight: bold; text-decoration: none; }
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 45px; align-items: center; }
+.panel {
+  padding: 28px;
+  border-radius: 16px;
+  background: var(--navy);
+  color: white;
+}
+.panel h3 { font-size: 23px; margin-top: 0; }
+.panel p { color: #d8e5ef; font-size: 14px; }
+.line { border-top: 1px solid rgba(255,255,255,.2); padding: 13px 0; font-size: 13px; }
+.line strong { color: #69dfce; }
+.notice-card { border-left: 4px solid var(--teal); }
+.notice-card small { color: var(--blue); font-weight: 800; text-transform: uppercase; font-size: 10px; }
+.contact-box {
+  background: linear-gradient(120deg, #e8f7f5, #f2f7fa);
+  border-radius: 16px;
+  padding: 30px;
+}
+footer { background: #0b2039; color: #d6e1ed; padding: 34px 22px; font-size: 12px; }
+.footer-inner { max-width: 1120px; margin: auto; display: flex; justify-content: space-between; gap: 25px; flex-wrap: wrap; }
+footer strong { color: white; }
+footer p { max-width: 600px; }
+footer a { color: #78dece; }
+@media(max-width: 760px) {
+  .nav { align-items: flex-start; flex-direction: column; }
+  nav { gap: 10px 16px; }
+  .hero { padding: 58px 20px 65px; }
+  .section { padding: 50px 20px; }
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .card { padding: 18px; }
+  .split { grid-template-columns: 1fr; gap: 25px; }
+}
+@media(max-width: 440px) {
+  .grid { grid-template-columns: 1fr; }
+  .brand strong { font-size: 14px; }
+  nav { gap: 9px 13px; }
+}
+</style>
+</head>
+<body>
+
+<div class="notice-bar">
+  UNOFFICIAL WEBSITE CONCEPT · PROPOSED FOR ADMINISTRATIVE REVIEW
+</div>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="#home">
+      <div class="logo">+</div>
+      <div>
+        <strong>NDMC Medical College</strong>
+        <small>Delhi · Website Design Proposal</small>
+      </div>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#academics">Academics</a>
+      <a href="#facilities">Facilities</a>
+      <a href="#notices">Notices</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <span class="eyebrow">A proposed digital campus experience</span>
+    <h1>Advancing medical education.<br><span>Inspiring better healthcare.</span></h1>
+    <p>
+      A modern digital gateway concept for medical education,
+      academic resources, campus information and student services.
+    </p>
+    <div class="actions">
+      <a class="btn btn-primary" href="#academics">Explore Academics ↗</a>
+      <a class="btn btn-outline" href="#about">Discover the Proposal</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="container split">
+    <div>
+      <span class="kicker">About the institution</span>
+      <h2>A connected campus begins with better information.</h2>
+      <p class="intro">
+        This proposed website aims to make institutional information
+        easier to discover, navigate and access on both mobile devices
+        and computers.
+      </p>
+      <p>
+        The final institutional profile, history, affiliations,
+        leadership details and other official information should be
+        supplied and verified by the college administration.
+      </p>
+    </div>
+    <div class="panel">
+      <h3>A digital-first approach</h3>
+      <p>A clear, accessible structure designed around the needs of
+      students, faculty, visitors and prospective applicants.</p>
+      <div class="line"><strong>01</strong> &nbsp; Academic information</div>
+      <div class="line"><strong>02</strong> &nbsp; Campus and facilities</div>
+      <div class="line"><strong>03</strong> &nbsp; Notices and announcements</div>
+      <div class="line"><strong>04</strong> &nbsp; Verified contact information</div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="academics">
+  <div class="container">
+    <span class="kicker">Learning and development</span>
+    <h2>Academic information</h2>
+    <p class="intro">A proposed directory for organising educational
+    resources and essential academic information.</p>
+    <div class="grid">
+      <article class="card">
+        <div class="icon">📚</div>
+        <h3>Courses and curriculum</h3>
+        <p>Course information, curriculum links, academic calendars
+        and verified programme details.</p>
+      </article>
+      <article class="card">
+        <div class="icon">🩺</div>
+        <h3>Departments</h3>
+        <p>A directory of academic departments, their services,
+        faculty and educational resources.</p>
+      </article>
+      <article class="card">
+        <div class="icon">🔬</div>
+        <h3>Research</h3>
+        <p>A space for approved research initiatives, publications,
+        academic collaborations and opportunities.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="facilities">
+  <div class="container">
+    <span class="kicker">Campus resources</span>
+    <h2>Information for campus life</h2>
+    <p class="intro">The following sections can be populated with
+    verified information after administrative approval.</p>
+    <div class="grid">
+      <article class="card">
+        <div class="icon">🏥</div>
+        <h3>Clinical facilities</h3>
+        <p>Approved information about clinical training and
+        associated healthcare facilities.</p>
+      </article>
+      <article class="card">
+        <div class="icon">📖</div>
+        <h3>Library and learning</h3>
+        <p>Library services, learning resources, timings and
+        access instructions.</p>
+      </article>
+      <article class="card">
+        <div class="icon">🎓</div>
+        <h3>Student support</h3>
+        <p>Student services, relevant support contacts and
+        verified campus guidelines.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="notices">
+  <div class="container">
+    <span class="kicker">Information centre</span>
+    <h2>Notices and announcements</h2>
+    <p class="intro">A proposed central location for important
+    institutional updates.</p>
+    <div class="grid">
+      <article class="card notice-card">
+        <small>Admissions</small>
+        <h3>Admission updates</h3>
+        <p>Official admission notices and eligibility information
+        can be linked here after verification.</p>
+      </article>
+      <article class="card notice-card">
+        <small>Academics</small>
+        <h3>Academic calendar</h3>
+        <p>Approved examination schedules, holidays and academic
+        calendar announcements.</p>
+      </article>
+      <article class="card notice-card">
+        <small>Announcements</small>
+        <h3>College notifications</h3>
+        <p>A central directory of verified circulars and
+        institutional announcements.</p>
+      </article>
+    </div>
+    <p style="font-size:12px;color:#63758a;margin-top:20px">
+      No live notices are published on this proposal. Consult the
+      institution's authorised channels for current information.
+    </p>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="container">
+    <div class="contact-box">
+      <span class="kicker">Get in touch</span>
+      <h2>Contact and location</h2>
+      <p>
+        Official postal address, telephone numbers, email addresses
+        and map links should be added only after verification and
+        approval by the institution.
+      </p>
+      <p><strong>Administrative contact:</strong> To be confirmed by
+      the college administration.</p>
+      <p><strong>Official website:</strong> Link to be confirmed
+      before publication.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <strong>NDMC Medical College — Website Proposal</strong>
+      <p>An independent design concept created for consideration
+      by the college administration.</p>
+    </div>
+    <div>
+      <strong>Important notice</strong>
+      <p>This website is not official, is not endorsed by the college,
+      and must not be used as a source of official medical, academic
+      or admission information.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+  </html>
+  
